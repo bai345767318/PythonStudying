@@ -1,0 +1,13 @@
+#注册成功数据
+- data: {"mobilephone":"17791443366","pwd":"123456"}
+  expect: {"code":'10001',"data":{},"msg":"注册成功","status":1}
+
+- data: { "mobilephone": "13509142231","pwd": "123456789123456789" }
+  expect: { "code": '10001',data": {},"msg": "注册成功","status": 1 }
+
+- data: { "mobilephone": "13509146687","pwd": "123456","rename":"小白" }
+  expect: { "code": '10001',"data": {},"msg": "注册成功","status": 1 }
+
+- data: { "mobilephone": "13509141183","pwd": "123456789123456789","rename":"小白" }
+  expect: { "code": '10001',"data": {},"msg": "注册成功","status": 1 }
+

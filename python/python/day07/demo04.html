@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- 
+    hmtl: 标签名,html是唯一的一个根标签
+    双标签
+    <html>: 开始标签
+    </html>: 结束标签 
+    单标签
+    <meta/>
+ -->
+<html>
+    <!-- 标签体：位于开始标签和结束标签中间的内容 -->
+    <head>
+        <!-- 设置文档的标题，编码，引入资源等等 -->
+        <title>这是我的第一个网页</title>
+        <!-- 
+            meta:元数据 
+            charset: 元素的属性
+            "utf-8": 属性的值
+        -->
+        <meta charset="utf-8">
+
+        <!-- 给页面添加样式，CSS Cascading Style Sheet 层叠样式表 -->
+        <style>
+            /* h1: 元素选择器 */
+            h1 {
+                
+                color: orangered;
+                font-family: 'Times New Roman', Times, serif;
+                
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            // JavaScript脚本
+            function f(){
+                alert('欢迎来带HTML的世界！');
+            }
+        </script>
+    </head>
+    <body>
+        <!-- 显示在页面中的内容 -->
+        <!-- h1-h6: 标题元素 -->
+        <h1>hello, HTML!</h1>
+        <h2>你好，中国！</h2>
+        <h6>测试37班</h6>
+        <button onclick="f();">按钮</button>
+
+        <!-- p元素 -->
+        <!-- 空格折叠原则：多个空格，\n,\t等字符被压缩成一个空格 -->
+        你好。
+                            你好。
+        你好。
+        <p>你好</p><p>你好</p><p>你好</p>
+
+        <!-- 列表元素 -->
+        <!-- 无序列表 -->
+        <ul>
+            <li>
+             陕西
+                <ul>
+                    <li>
+                        西安
+                    </li>
+
+                    <li>渭南</li>
+                    <li>宝鸡</li>
+                </ul>
+            </li>
+            <li>河北</li>
+            <li>山东</li>
+        </ul>
+        <!-- 有序列表 -->
+        <ol>
+            <li>美国</li>
+            <li>中国</li>
+            <li>日本</li>
+        </ol>
+
+        <!-- 下拉选择框 -->
+        <select name="" id="">
+            <option value="0">请选择</option>
+            <option value="1">小学</option>
+            <option value="2">中学</option>
+            <option value="3">专科</option>
+            <option value="4">本科</option>
+            <option value="5">硕士</option>
+            <option value="6">博士</option>
+        </select>
+    </body>
+</html>

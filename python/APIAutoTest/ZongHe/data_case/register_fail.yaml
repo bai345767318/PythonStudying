@@ -1,0 +1,62 @@
+# 注册失败的数据放register_fail.yaml
+- data: {"mobilephone":"17791443572","pwd":"123456"}
+  expect: {"code":20110,"data":{},"msg":"手机号码已被注册","status":0}
+
+- data: {"pwd":"1234567"}
+  expect: {"code":20103,"data":{},"msg":"手机号不能为空","status":0}
+
+- data: {"pwd":"1234567","rename":"小白"}
+  expect: {"code":20103,"data":{},"msg":"手机号不能为空","status":0}
+
+- data: { "mobilephone": "1315","pwd": "123456"}
+  expect: { "code": 20109,"data": {},"msg": "手机号码格式不正确","status": 0}
+
+- data: { "mobilephone": "1315","pwd": "123456","rename":"小白"}
+  expect: { "code": 20109,"data": {},"msg": "手机号码格式不正确","status": 0}
+
+- data: { "mobilephone": "131533547659","pwd": "123456"}
+  expect: { "code": 20109,"data": {},"msg": "手机号码格式不正确","status": 0}
+
+- data: { "mobilephone": "131533547658","pwd": "123456","rename":"小白"}
+  expect: { "code": 20109,"data": {},"msg": "手机号码格式不正确","status": 0}
+
+- data: { "mobilephone": "@131533547658","pwd": "#123456","rename":"小白"}
+  expect: { "code": 20109,"data": {},"msg": "手机号码格式不正确","status": 0}
+
+- data: { "mobilephone": "@1234567890","pwd": "123456","rename":"小白"}
+  expect: { "code": 20109,"data": {},"msg": "手机号码格式不正确","status": 0}
+
+- data: { "mobilephone": "小白123456789","pwd": "123456"}
+  expect: { "code": 20109,"data": {},"msg": "手机号码格式不正确","status": 0}
+
+- data: { "mobilephone": "小白123456789","pwd": "123456","rename":"小白"}
+  expect: { "code": 20109,"data": {},"msg": "手机号码格式不正确","status": 0}
+
+- data: { "mobilephone": "131533547658","pwd": "123456","rename":"小白"}
+  expect: { "code": 20109,"data": {},"msg": "手机号码格式不正确","status": 0}
+
+- data: { "mobilephone": "131533547659","pwd": "12345"}
+  expect: { "code": 20108,"data": {},"msg": "密码长度必须为6~18","status": 0}
+
+- data: { "mobilephone": "13153354760","pwd": "12345","rename":"小白"}
+  expect: { "code": 20108,"data": {},"msg": "密码长度必须为6~18","status": 0}
+
+- data: { "mobilephone": "13153354760","pwd": "1234567891234567890"}
+  expect: { "code": 20108,"data": {},"msg": "密码长度必须为6~18","status": 0}
+
+- data: { "mobilephone": "13153354755","pwd": "1234567891234567890","rename":"小白"}
+  expect: { "code": 20108,"data": {},"msg": "密码长度必须为6~18","status": 0}
+
+- data: { "mobilephone": "13153354765","rename":"小白"}
+  expect: { "code": 20103,"data": {},"msg": "密码不能为空","status": 0}
+
+- data: { "mobilephone": "13153354766"}
+  expect: { "code": 20103,"data": {},"msg": "密码不能为空","status": 0}
+
+
+
+
+
+
+
+

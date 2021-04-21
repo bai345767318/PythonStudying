@@ -1,0 +1,71 @@
+JDK Java Development Kit -Java开发工具包
+JRE Java Runtime Environment - Java运行环境
+
+配置Java环境变量
+JAVA_HOME : D:\jdk1.8.0_144
+PATH: %JAVA_HOME%\jre\bin;%JAVA_HOME%\bin
+java -version:命令行查看安装版本
+
+SDK SoftWare Development Kit 软件开发工具包--只针对安卓
+ANDROID_HOME : D:\android-sdk-windows
+PATH : %ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools
+
+adb命令查看安装情况
+adb:用于控制模拟器
+adb devices-------版本不匹配异常：替换
+
+进入命令行执行命令
+adb shell：root用户
+monkey 100:模拟猴子操作手机，100：100条伪随机事件，可重现，真随机不可重现
+
+直接执行命令
+adb shell monkey 100
+
+列出所有已安装所有包名/程序名
+adb shell pm list packages 
+
+获取当前激活app的包名（已安装） 聚焦 激活
+adb shell dumpsys | find "mFocusedActivity" :反着为网址但不准确，保证不重复性
+
+通过反编译命令获取包名并存储
+aapt: 反编译工具  dump:转储  path:D:\android-sdk-windows\build-tools\29.0.3
+aapt dump badging D:\com.mt.mtxx.mtxx.apk >D:/log.txt
+
+安装apk
+adb install D:\com.mt.mtxx.mtxx.apk
+
+卸载app
+adb uninstall com.mt.mtxx.mtxx
+
+-p:对指定app注入伪随机事件(针对包名)   inject:注入
+adb shell monkey -p com.baidu.wenku 100
+检查程序健壮性
+-v:日志级别 最多3个
+adb shell monkey -p com.baidu.wenku -v 100
+seed:种子/编号  重现用seed -v:日志 11种事件(0-10) 坐标
+>输出日志到文件中
+adb shell monkey -p com.baidu.wenku -v 100 > monkey.log
+>>追加
+adb shell monkey -p com.baidu.wenku -v 100 >> monkey.log
+
+--throttle 设置伪随机事件的时间间隔，单位是毫秒
+adb shell monkey -p com.mt.mtxx.mtxx --throttle 100 -v -v -v 2000 > d:\monkey1.log
+
+-s 指定伪随机事件种子值进行重现
+adb shell monkey -p com.baidu.wenku -s 1606198850321 -v 100
+初始值就叫种子
+
+--ignore-crashes 忽略崩溃 继续跑
+adb shell monkey -p com.mt.mtxx.mtxx --ignore-crashes -v -v -v 1000 > d:\monkey2.log
+
+指定事件的百分比
+adb shell monkey -p com.baidu.wenku --pct-touch 50 -v 100
+
+java：原生 性能最好
+h5：快
+java+h5：混合 兼顾c
+游戏:C
+
+
+npm install appium-doctor
+C:\nodejs\node_modules\.bin>appium-doctor
