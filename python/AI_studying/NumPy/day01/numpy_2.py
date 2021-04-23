@@ -54,8 +54,8 @@ print(a['age'])  # [10 20 30]
 # print(student)
 # # print(b) #TypeError: Cannot construct(构造) a dtype from an array
 
-student = np.dtype([('name','S20'), ('age', 'i1'), ('marks', 'f4')])
-a = np.array([('abc', 21, 50),('xyz', 18, 75)], dtype = student)
+student = np.dtype([('name', 'S20'), ('age', 'i1'), ('marks', 'f4')])
+a = np.array([('abc', 21, 50), ('xyz', 18, 75)], dtype=student)
 print(a)
 
 # b	布尔型

@@ -28,56 +28,54 @@ print(x)
 x = np.zeros(5)
 print(x)
 # 设置类型为整数
-y = np.zeros((5,), dtype=np.int8)#此处需指定长度
+y = np.zeros((5,), dtype=np.int8)  # 此处需指定长度
 print(y)
-#自定义类型
-z = np.zeros((2,2),dtype= [('x','i4'),('y','i4')])
+# 自定义类型
+z = np.zeros((2, 2), dtype=[('x', 'i4'), ('y', 'i4')])
 print(z)
 
 # 3.numpy.ones'
-#创建指定形状的数组，数组元素以 1 来填充
+# 创建指定形状的数组，数组元素以 1 来填充
 # shape	数组形状
 # dtype	数据类型，可选
 # order	'C' 用于 C 的行数组，或者 'F' 用于 FORTRAN 的列数组
 
-#默认为浮点数
+# 默认为浮点数
 x = np.ones(5)
 print(x)
-#自定义类型
-x = np.ones([2,3],dtype=int)#此处无需指定长度
+# 自定义类型
+x = np.ones([2, 3], dtype=int)  # 此处无需指定长度
 print(x)
-
 
 print("**********note**********")
 from numpy import *
-#创建正态分布数组
-#创建randn（size）俯冲X~N（0,1）的正态分布随机数组
-a = random.randn(2,3)#dtype 默认浮点型
+
+# 创建正态分布数组
+# 创建randn（size）俯冲X~N（0,1）的正态分布随机数组
+a = random.randn(2, 3)  # dtype 默认浮点型
 print(a)
 
-#创建随机分布固定size及范围的整数型数组
-#randint（[low,high],size）
-a = random.randint(100,200,(3,3))
+# 创建随机分布固定size及范围的整数型数组
+# randint（[low,high],size）
+a = random.randint(100, 200, (3, 3))
 print(a)
-#arange创建数组
+# arange创建数组
 a = np.arange(10)
-b  = np.arange(10,20)
-c =np.arange(10,20,2)
+b = np.arange(10, 20)
+c = np.arange(10, 20, 2)
 print(a)
 print(b)
 print(c)
-#eye创建对角矩阵数据
+# eye创建对角矩阵数据
 a = np.eye(5)
 print(a)
 
-#order中的C是从低维度度开始读写，F反之
-a = np.array([[[1,2],[3,4],[5,6]],[[7,8],[9,10],[11,12]]])
+# order中的C是从低维度度开始读写，F反之
+a = np.array([[[1, 2], [3, 4], [5, 6]], [[7, 8], [9, 10], [11, 12]]])
 # a.shape(2,3,2)############有问题
 # print(a)
-n = np.reshape(a,(4,3)) #这里默认order为C
+n = np.reshape(a, (4, 3))  # 这里默认order为C
 print(n)
 
-m = np.reshape(a,(4,3),order='F')
+m = np.reshape(a, (4, 3), order='F')
 print(m)
-
-
